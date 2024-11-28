@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👨‍⚕️ Doctor Registration</title>
+    <link rel="stylesheet" href="doctor register page.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Doctor Block -->
+        <div class="block doctor-block">
+            <h2>👨‍⚕️ Doctor Registration</h2>
+            <p>Join our network to manage patients and schedules.</p>
+            <form id="doctor-form">
+                <div class="form-group">
+                    <label for="doctor-name">👤 Name</label>
+                    <input type="text" id="doctor-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor-email">📧 Email</label>
+                    <input type="email" id="doctor-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor-id">🆔 Doctor ID</label>
+                    <input type="text" id="doctor-id" placeholder="Enter your doctor ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor-password">🔒 Password</label>
+                    <input type="password" id="doctor-password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="doctor-confirm-password">🔒 Confirm Password</label>
+                    <input type="password" id="doctor-confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <div class="show-password-group">
+                    <input type="checkbox" id="show-doctor-password" onclick="toggleDoctorPassword()"> Show Password
+                </div>
+                <button type="submit" class="btn doctor-btn">Register as Doctor</button>
+                <p id="doctor-feedback" class="feedback"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Doctor Password Toggle
+        function toggleDoctorPassword() {
+            const password = document.getElementById('doctor-password');
+            const confirmPassword = document.getElementById('doctor-confirm-password');
+            const showPassword = document.getElementById('show-doctor-password');
+            if (showPassword.checked) {
+                password.type = 'text';
+                confirmPassword.type = 'text';
+            } else {
+                password.type = 'password';
+                confirmPassword.type = 'password';
+            }
+        }
+
+        // Feedback for Doctor Registration
+        document.getElementById('doctor-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('doctor-feedback').textContent = '✅ Doctor Registered Successfully!';
+            document.getElementById('doctor-feedback').style.color = '#28a745';
+        });
+    </script>
+</body>
+</html>
