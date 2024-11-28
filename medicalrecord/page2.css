@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.disease-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.disease-block {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.disease-block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.disease-block i {
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.disease-block:hover i {
+    color: #0056b3;
+}
+
+.disease-block h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.disease-block p {
+    font-size: 14px;
+    color: #555;
+}
+
+.disease-block:hover p {
+    color: #007bff;
+}
+
+.disease-block.heart {
+    background-color: #f8d7da;
+}
+
+.disease-block.eye {
+    background-color: #d1ecf1;
+}
+
+.disease-block.ortho {
+    background-color: #d4edda;
+}
+
+.disease-block.others {
+    background-color: #fff3cd;
+}

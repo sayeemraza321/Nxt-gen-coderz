@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor & Patient Login</title>
+    <link rel="stylesheet" href="login_page.css">
+</head>
+<body>
+    <div class="container">
+        <div class="side doctor-side">
+            <div class="content">
+                <h2 class="title">👨‍⚕️ Doctor Login</h2>
+                <p>Access patient records and manage schedules.</p>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Doctor ID" required>
+                        <span class="input-icon">🆔</span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="doctor-password" placeholder="Password" required>
+                        <span class="input-icon">🔒</span>
+                    </div>
+                    <button type="submit" class="login-button">Login</button>
+                </form>
+                <p id="doctor-show-password" class="show-password-text" onclick="toggleDoctorPassword()">👁️ Show Password</p>
+                <p class="register-link">Don't have an account? <a href="doctor register page.html">Register here</a></p> <!-- Register link -->
+            </div>
+        </div>
+
+        <div class="side patient-side">
+            <div class="content">
+                <h2 class="title">🤒 Patient Login</h2>
+                <p>Access your medical records and connect with doctors.</p>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Patient ID or Email" required>
+                        <span class="input-icon">📧</span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="patient-password" placeholder="Password" required>
+                        <span class="input-icon">🔒</span>
+                    </div>
+                    <button type="submit" class="login-button">Login</button>
+                </form>
+                <p id="patient-show-password" class="show-password-text" onclick="togglePatientPassword()">👁️ Show Password</p>
+                <p class="register-link">Don't have an account? <a href="patient register page.html">Register here</a></p> <!-- Register link -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDoctorPassword() {
+            const passwordInput = document.getElementById('doctor-password');
+            const showPasswordText = document.getElementById('doctor-show-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showPasswordText.textContent = '🔒 Hide Password';
+            } else {
+                passwordInput.type = 'password';
+                showPasswordText.textContent = '👁️ Show Password';
+            }
+        }
+
+        function togglePatientPassword() {
+            const passwordInput = document.getElementById('patient-password');
+            const showPasswordText = document.getElementById('patient-show-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showPasswordText.textContent = '🔒 Hide Password';
+            } else {
+                passwordInput.type = 'password';
+                showPasswordText.textContent = '👁️ Show Password';
+            }
+        }
+    </script>
+</body>
+</html>
